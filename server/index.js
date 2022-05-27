@@ -11,6 +11,12 @@ const handle = require('nodemailer-express-handlebars');
 const pdf = require('html-pdf');
 const pdfTemplate = require('./documents');
 global.__basedir = __dirname;
+var http = require('http');
+var port = process.env.port || 8080;
+
+app.get('/', (req, res) => {
+  res.send('Server is running!')
+})
 
 app.use(express.json());
 app.use(cors());
@@ -18,9 +24,6 @@ app.use(express.static(path.join(__dirname, '../')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.get('*', function(req, res, next) {
-//   res.sendFile(path.join(__dirname, '../index.html'));
-// });
 
 const db = require("./models");
 
@@ -303,7 +306,7 @@ app.post("/fulfilled-text", cors(), async(req, res) => {
 //---------End email stuff----------//
 
 db.sequelize.sync().then(() => {
-  app.listen(3001, () => {
-    console.log("Server running on port 3001");
+  app.listen(port, () => {
+    console.log("Server running on port " + port);
   });
 });

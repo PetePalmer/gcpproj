@@ -57,7 +57,7 @@ if(referralredirect === "true"){
    
 
 
-    axios.get(`http://localhost:3001/auth/basicinfo/?id=${id}`).then((response) => {
+    axios.get(`http://localhost:8080/auth/basicinfo/?id=${id}`).then((response) => {
       setUserData(response.data);
       localStorage.setItem("username", response.data.username);
         localStorage.setItem("id", response.data.id);

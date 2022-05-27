@@ -67,7 +67,7 @@ const VerifyInfo = () => {
 
     useEffect(() => {
       const getAddresses = () => {
-        axios.get(`http://localhost:3001/locations/all-locations`).then((response) => {  
+        axios.get(`http://localhost:8080/locations/all-locations`).then((response) => {  
           setAddresses(response.data);
         }).catch(error => console.error('Error:' + error));
       };

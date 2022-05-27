@@ -78,7 +78,7 @@ function ReferralDetails() {
 //Query Referral based on ID from URL passed through tableContents
   useEffect(()=>{
     console.log(id);
-    axios.get(`http://localhost:3001/referrals/referralinfo/${id}`).then((response) => {
+    axios.get(`http://localhost:8080/referrals/referralinfo/${id}`).then((response) => {
        console.log(response.data);
        setRefData(response.data);
        setSubmitted(response.data.createdAt.slice(0, 10));
@@ -121,7 +121,7 @@ const userN = localStorage.getItem("username");
 const handleVolunteerUpdate = (id) => {
   //e.preventDefault();
   const updateReferral = { status: 'IN PROGRESS', volunteer: user, volunteer_user: userN }
-  axios.put(`http://localhost:3001/referrals/updateReferral/${refData.id}`, updateReferral
+  axios.put(`http://localhost:8080/referrals/updateReferral/${refData.id}`, updateReferral
   ).then(async (response) => {
     if(response.status = 200){
       window.location.reload();
@@ -141,7 +141,7 @@ const handleVolunteerUpdate = (id) => {
         outfit_combo: outfit_combo, bottom_color: bottom_color, top_colors: top_colors, bra_info: bra_info, 
         underwear: underwear, shoe_size: shoe_size, socks: socks, hygiene_kit: hygiene_kit, hygiene_items: hygiene_items,
         feminine_hygiene: feminine_hygiene, school_supplies: school_supplies }
-      axios.put(`http://localhost:3001/referrals/updateReferral/${id}`, updateReferral
+      axios.put(`http://localhost:8080/referrals/updateReferral/${id}`, updateReferral
       ).then(async (response) => {
         if(response.status = 200){
           window.location.reload();

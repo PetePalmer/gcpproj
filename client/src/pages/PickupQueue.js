@@ -102,7 +102,7 @@ export default function PickupQueue(){
         }, []);
 
     const getAllReferrals = () => {
-      axios.get(`http://localhost:3001/referrals/awaiting/?referrer=${referrer}`, {
+      axios.get(`http://localhost:8080/referrals/awaiting/?referrer=${referrer}`, {
         params: {
           username: referrer
         }

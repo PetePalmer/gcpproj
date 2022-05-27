@@ -140,7 +140,7 @@ export default function MyReferrals(){
         }, []);
 
     const countAllOnHold = () => {
-      axios.get(`http://localhost:3001/referrals/submittedOnHold/?referrer=${referrer}`, {
+      axios.get(`http://localhost:8080/referrals/submittedOnHold/?referrer=${referrer}`, {
         params: {
           username: referrer
         }
@@ -157,7 +157,7 @@ export default function MyReferrals(){
           }, []);
   
       const countAllInProgress = () => {
-        axios.get(`http://localhost:3001/referrals/submittedInProgress/?referrer=${referrer}`, {
+        axios.get(`http://localhost:8080/referrals/submittedInProgress/?referrer=${referrer}`, {
           params: {
             username: referrer
           }
@@ -174,7 +174,7 @@ export default function MyReferrals(){
             }, []);
     
         const countAllAwaitingPickup = () => {
-          axios.get(`http://localhost:3001/referrals/submittedAwaitingPickup/?referrer=${referrer}`, {
+          axios.get(`http://localhost:8080/referrals/submittedAwaitingPickup/?referrer=${referrer}`, {
             params: {
               username: referrer
             }
@@ -192,7 +192,7 @@ export default function MyReferrals(){
         }, []);
 
     const getAllReferrals = () => {
-      axios.get(`http://localhost:3001/referrals/submitted/?referrer=${referrer}`, {
+      axios.get(`http://localhost:8080/referrals/submitted/?referrer=${referrer}`, {
         params: {
           username: referrer
         }
@@ -249,10 +249,10 @@ const [search, setSearch] = React.useState('');
     
     let url=""
     if(value){
-      url=`http://localhost:3001/referrals/submitted/search/${referrer}/${value}`
+      url=`http://localhost:8080/referrals/submitted/search/${referrer}/${value}`
     }
     else{
-      url=`http://localhost:3001/referrals/submitted/?referrer=${referrer}`
+      url=`http://localhost:8080/referrals/submitted/?referrer=${referrer}`
     }
     console.log(url);
     axios.get(url).then((response) => {  

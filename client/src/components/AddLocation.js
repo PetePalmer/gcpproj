@@ -73,7 +73,7 @@ export default function AddLocation() {
 //submit function
 function handleSubmit() {
   const location = {county: county, name: name, address: address }
-  axios.post(`http://localhost:3001/locations/location`, location
+  axios.post(`http://localhost:8080/locations/location`, location
   ).then(async (response) => {
       if(response.status = 200){
         window.location.reload();

@@ -141,7 +141,7 @@ export default function TableContent(){
       }, []);
 
   const countAllUnassigned = () => {
-    axios.get(`http://localhost:3001/referrals/unassignedCount`).then((response) => {  
+    axios.get(`http://localhost:8080/referrals/unassignedCount`).then((response) => {  
       setNumUnassigned(response.data);
       })
       .catch(error => console.error('Error:' + error));
@@ -154,7 +154,7 @@ export default function TableContent(){
         }, []);
 
     const countAllOnHold = () => {
-      axios.get(`http://localhost:3001/referrals/onHoldCount`).then((response) => {  
+      axios.get(`http://localhost:8080/referrals/onHoldCount`).then((response) => {  
         setNumOnHold(response.data);
         })
         .catch(error => console.error('Error:' + error));
@@ -166,7 +166,7 @@ export default function TableContent(){
           }, []);
   
       const countAllInProgress = () => {
-        axios.get(`http://localhost:3001/referrals/inProgressCount`).then((response) => {  
+        axios.get(`http://localhost:8080/referrals/inProgressCount`).then((response) => {  
           setNumInProgress(response.data);
           })
           .catch(error => console.error('Error:' + error));
@@ -178,7 +178,7 @@ export default function TableContent(){
             }, []);
     
         const countAllAwaitingPickup = () => {
-          axios.get(`http://localhost:3001/referrals/awaitingPickupCount`).then((response) => {  
+          axios.get(`http://localhost:8080/referrals/awaitingPickupCount`).then((response) => {  
             setNumAwaitingPickup(response.data);
             })
             .catch(error => console.error('Error:' + error));
@@ -190,7 +190,7 @@ export default function TableContent(){
         }, []);
 
     const getAllReferrals = () => {
-      axios.get(`http://localhost:3001/referrals/queue`).then((response) => {  
+      axios.get(`http://localhost:8080/referrals/queue`).then((response) => {  
           setReferralData(response.data);
         })
         .catch(error => console.error('Error:' + error));
@@ -225,10 +225,10 @@ const [search, setSearch] = React.useState('');
 
     let url=""
     if(value){
-      url=`http://localhost:3001/referrals/search/${value}`
+      url=`http://localhost:8080/referrals/search/${value}`
     }
     else{
-      url=`http://localhost:3001/referrals/queue`
+      url=`http://localhost:8080/referrals/queue`
     }
     console.log(url);
     axios.get(url).then((response) => {  

@@ -84,7 +84,7 @@ function Registration() {
 
     useEffect(() => {
       const getAddresses = () => {
-        axios.get(`https://gcpfunction.azurewebsites.net/locations/all-locations`).then((response) => {  
+        axios.get(`http://localhost:8080/locations/all-locations`).then((response) => {  
           setAddresses(response.data);
         }).catch(error => console.error('Error:' + error));
       };
@@ -137,7 +137,7 @@ console.log(V)
     async function handleWelcomeEmail() {
       
       try {
-        await axios.post("http://localhost:3001/welcome-email", {
+        await axios.post("http://localhost:8080/welcome-email", {
           email: referrer_email,
           subject: "Nice, You've Successfully Registered!",
           //text: text,
@@ -159,7 +159,7 @@ console.log(V)
     Phonenumber: referrer_phone, PhoneProvider: phoneProvider, Notification: notificationPreference, Agency: referrer_agency, Agency_zipcode: referrer_agencyzip,
   nearest_location: nearestLocation, role: "Referrer", }
 
-    axios.post("http://localhost:3001/auth", data).then((response) => {
+    axios.post("http://localhost:8080/auth", data).then((response) => {
       if(response.data.error === "Username already in use!"){
         setUserError(response.data.error);
       } else if(response.data.error === "Email already in use!"){

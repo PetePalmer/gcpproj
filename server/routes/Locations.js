@@ -7,6 +7,7 @@ const { sequelize } = require("sequelize");
 const {Locations, Sequelize} = require("../models");
 var jsonParser = bodyParser.json();
 
+
 router.post("/location", async (req, res) => {
     const { county, name, address } = req.body;
         Locations.create({
@@ -17,7 +18,7 @@ router.post("/location", async (req, res) => {
       res.json("SUCCESS");
   });
 
-  router.get('/all-locations', async (req, res) => {
+  router.get('/all-locations',cors(), async (req, res) => {
     try{
       Locations.findAll({attributes: ['id','county','name', 'address']})
       .then(Locations => {

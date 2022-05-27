@@ -159,7 +159,7 @@ function Admin() {
     }, []);
 
 const countAllJan = () => {
-  axios.get(`http://localhost:3001/referrals/jan`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/jan`).then((response) => {  
     setJanReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -171,7 +171,7 @@ const countAllJan = () => {
     }, []);
 
 const countAllFeb = () => {
-  axios.get(`http://localhost:3001/referrals/feb`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/feb`).then((response) => {  
     setFebReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -183,7 +183,7 @@ const countAllFeb = () => {
     }, []);
 
 const countAllMar = () => {
-  axios.get(`http://localhost:3001/referrals/mar`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/mar`).then((response) => {  
     setMarReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -195,7 +195,7 @@ const countAllMar = () => {
     }, []);
 
 const countAllApr = () => {
-  axios.get(`http://localhost:3001/referrals/apr`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/apr`).then((response) => {  
     setAprReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -207,7 +207,7 @@ const countAllApr = () => {
     }, []);
 
 const countAllMay = () => {
-  axios.get(`http://localhost:3001/referrals/may`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/may`).then((response) => {  
     setMayReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -219,7 +219,7 @@ const countAllMay = () => {
     }, []);
 
 const countAllJun = () => {
-  axios.get(`http://localhost:3001/referrals/jun`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/jun`).then((response) => {  
     setJunReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -231,7 +231,7 @@ const countAllJun = () => {
     }, []);
 
 const countAllJul = () => {
-  axios.get(`http://localhost:3001/referrals/jul`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/jul`).then((response) => {  
     setJulReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -243,7 +243,7 @@ const countAllJul = () => {
     }, []);
 
 const countAllAug = () => {
-  axios.get(`http://localhost:3001/referrals/aug`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/aug`).then((response) => {  
     setAugReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -255,7 +255,7 @@ const countAllAug = () => {
     }, []);
 
 const countAllSep = () => {
-  axios.get(`http://localhost:3001/referrals/sep`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/sep`).then((response) => {  
     setSepReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -267,7 +267,7 @@ const countAllSep = () => {
     }, []);
 
 const countAllOct = () => {
-  axios.get(`http://localhost:3001/referrals/oct`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/oct`).then((response) => {  
     setOctReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -279,7 +279,7 @@ const countAllOct = () => {
     }, []);
 
 const countAllNov = () => {
-  axios.get(`http://localhost:3001/referrals/nov`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/nov`).then((response) => {  
     setNovReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -291,7 +291,7 @@ const countAllNov = () => {
     }, []);
 
 const countAllDec = () => {
-  axios.get(`http://localhost:3001/referrals/dec`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/dec`).then((response) => {  
     setDecReferrals(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -324,7 +324,7 @@ const countAllDec = () => {
     }, []);
 
 const countAllUnassigned = () => {
-  axios.get(`http://localhost:3001/referrals/unassignedCount`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/unassignedCount`).then((response) => {  
     setNumUnassigned(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -339,7 +339,7 @@ const countAllUnassigned = () => {
       }, []);
 
   const countAllOnHold = () => {
-    axios.get(`http://localhost:3001/referrals/onHoldCount`).then((response) => {  
+    axios.get(`http://localhost:8080/referrals/onHoldCount`).then((response) => {  
       setNumOnHold(response.data);
       })
       .catch(error => console.error('Error:' + error));
@@ -353,7 +353,7 @@ const countAllUnassigned = () => {
         }, []);
 
     const countAllInProgress = () => {
-      axios.get(`http://localhost:3001/referrals/inProgressCount`).then((response) => {  
+      axios.get(`http://localhost:8080/referrals/inProgressCount`).then((response) => {  
         setNumInProgress(response.data);
         })
         .catch(error => console.error('Error:' + error));
@@ -365,7 +365,7 @@ const countAllUnassigned = () => {
           }, []);
   
       const countAllAwaitingPickup = () => {
-        axios.get(`http://localhost:3001/referrals/awaitingPickupCount`).then((response) => {  
+        axios.get(`http://localhost:8080/referrals/awaitingPickupCount`).then((response) => {  
           setNumAwaitingPickup(response.data);
           })
           .catch(error => console.error('Error:' + error));
@@ -408,7 +408,7 @@ const [volunteerAnnouncementDefault, setVolunteerAnnouncementDefault] = React.us
 const volunteerAnnID = 1;
 useEffect(() => {
   const getVolunteerAnnouncement = () => {
-    axios.get(`http://localhost:3001/announcements/announcementinfo/${volunteerAnnID}`).then((response) => {  
+    axios.get(`http://localhost:8080/announcements/announcementinfo/${volunteerAnnID}`).then((response) => {  
 
     if(response.data == null){
       setVolunteerAnnouncementDefault("No announcement just yet");
@@ -424,7 +424,7 @@ useEffect(() => {
 function handleVolunteerUpdate() {
   const id = 1;
   const announcement = {announcement: volunteerAnnouncement}
-   axios.put(`http://localhost:3001/announcements/updateAnnouncement/${id}`, announcement
+   axios.put(`http://localhost:8080/announcements/updateAnnouncement/${id}`, announcement
    ).then(async (response) => {
      if(response.status = 200){
        window.location.replace("/admin");
@@ -440,7 +440,7 @@ const [referrerAnnouncementDefault, setReferrerAnnouncementDefault] = React.useS
 const referrerAnnID = 2;
 useEffect(() => {
   const getReferrerAnnouncement = () => {
-    axios.get(`http://localhost:3001/announcements/announcementinfo/${referrerAnnID}`).then((response) => {  
+    axios.get(`http://localhost:8080/announcements/announcementinfo/${referrerAnnID}`).then((response) => {  
       
       if(response.data == null){
       setReferrerAnnouncementDefault("No announcement just yet");
@@ -455,7 +455,7 @@ useEffect(() => {
 function handleReferrerUpdate() {
   const id = 2;
   const announcement = {announcement: referrerAnnouncement}
-   axios.put(`http://localhost:3001/announcements/updateAnnouncement/${id}`, announcement
+   axios.put(`http://localhost:8080/announcements/updateAnnouncement/${id}`, announcement
    ).then(async (response) => {
      if(response.status = 200){
        window.location.replace("/admin");
@@ -474,7 +474,7 @@ function handleReferrerUpdate() {
     }, []);
 
 const getAllLocations = () => {
-  axios.get(`http://localhost:3001/locations/all-locations`).then((response) => {  
+  axios.get(`http://localhost:8080/locations/all-locations`).then((response) => {  
       setLocationData(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -506,10 +506,10 @@ const [search, setSearch] = React.useState('');
 
     let url=""
     if(value){
-      url=`http://localhost:3001/locations/search/${value}`
+      url=`http://localhost:8080/locations/search/${value}`
     }
     else{
-      url=`http://localhost:3001/locations/all-locations`
+      url=`http://localhost:8080/locations/all-locations`
     }
     console.log(url);
     axios.get(url).then((response) => {  

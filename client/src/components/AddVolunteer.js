@@ -105,7 +105,7 @@ export default function AddVolunteer() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/auth", data).then(() => {
+    axios.post("http://localhost:8080/auth", data).then(() => {
       console.log(data);
     })
   };

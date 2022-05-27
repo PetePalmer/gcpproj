@@ -121,7 +121,7 @@ export default function Archive(){
 
 
     const countAllFulfilledReferrals = () => {
-        axios.get(`http://localhost:3001/referrals/archive/count`).then((response) => {  
+        axios.get(`http://localhost:8080/referrals/archive/count`).then((response) => {  
             setReferralCount(response.data);
           })
           .catch(error => console.error('Error:' + error));
@@ -132,7 +132,7 @@ export default function Archive(){
         }, []);
 
     const getAllReferrals = () => {
-      axios.get(`http://localhost:3001/referrals/archive`).then((response) => {  
+      axios.get(`http://localhost:8080/referrals/archive`).then((response) => {  
           setReferralData(response.data);
           //setReferralCount(response.data.count);
         })
@@ -167,10 +167,10 @@ const [search, setSearch] = React.useState('');
 
     let url=""
     if(value){
-      url=`http://localhost:3001/referrals/archive/search/${value}`
+      url=`http://localhost:8080/referrals/archive/search/${value}`
     }
     else{
-      url=`http://localhost:3001/referrals/archive`
+      url=`http://localhost:8080/referrals/archive`
     }
     console.log(url);
     axios.get(url).then((response) => {  

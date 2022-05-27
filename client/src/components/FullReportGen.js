@@ -65,7 +65,7 @@ function FullReportGen() {
     }, []);
 
 const getAllReferrals = () => {
-  axios.get(`http://localhost:3001/referrals/reportgen`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/reportgen`).then((response) => {  
       setReferralData(response.data);
     })
     .catch(error => console.error('Error:' + error));

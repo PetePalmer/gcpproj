@@ -61,7 +61,7 @@ function Login() {
 
   const login = () => {
     const data = { username: username, password: password };
-    axios.post("http://localhost:3001/auth/login", data).then((response) => {
+    axios.post("http://localhost:8080/auth/login", data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
       } else {
@@ -110,12 +110,12 @@ function Login() {
         backgroundRepeat: "no-repeat"
       }}></Box> */}
     <Stack
-        direction={{ sm: 'column', md: 'row' }}
+        direction={{ xs: 'column',sm: 'column', md: 'row' }}
         spacing={0}
       >
         
     <Box sx={{
-        width: '50%',
+        width: '100%',
         height: 'auto',
         backgroundColor: '#fff',
         padding: 7,
@@ -182,7 +182,7 @@ function Login() {
 
     </Box>
     <Box sx={{
-        width: '50%',
+        width: '100%',
         height: 'auto',
         backgroundColor: '#86c341',
         padding: 7,

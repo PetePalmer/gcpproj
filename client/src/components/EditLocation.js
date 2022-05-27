@@ -72,7 +72,7 @@ export default function EditLocation({locationID,prevCounty, prevName, prevAddre
 function handleUpdate() {
   const id = locationID;
   const updateLocation = {county: county ? county: prevCounty, name: name ? name: prevName, address: address ? address: prevAddress }
-   axios.put(`http://localhost:3001/locations/updateLocation/${id}`, updateLocation
+   axios.put(`http://localhost:8080/locations/updateLocation/${id}`, updateLocation
    ).then(async (response) => {
      if(response.status = 200){
        window.location.replace("/admin");
@@ -85,7 +85,7 @@ function handleUpdate() {
 
  function handleDelete() {
   const id = locationID;
-   axios.delete(`http://localhost:3001/locations/deletelocation/${id}`).then(async (response) => {
+   axios.delete(`http://localhost:8080/locations/deletelocation/${id}`).then(async (response) => {
      if(response.status = 200){
        window.location.replace("/admin");
       // window.scrollTo(0, 0)

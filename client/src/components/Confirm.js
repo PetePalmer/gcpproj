@@ -100,7 +100,7 @@ ethnicity: ethnicity, living_status: livingStatus, living_status_note: livingSit
 size_type: sizeType, pant_size: pantSize, pant_waist: pantWaist, top_size: topSize, outfit_combo: outfitCombo, bottom_color: uniform_bottoms,
 top_colors: uniform_tops, bra_info: bra, underwear: underwear, shoe_size: shoeSize, socks: socks, hygiene_kit: hygiene_kit, hygiene_items: hygiene_items,
 feminine_hygiene: feminine_hygiene, school_supplies: school_supplies, status: "UNASSIGNED", referrer: referrer_user}
-    axios.post(`http://localhost:3001/referrals/`, referral
+    axios.post(`http://localhost:8080/referrals/`, referral
     ).then(async (response) => {
         if(response.status = 200){
 
@@ -126,7 +126,7 @@ feminine_hygiene: feminine_hygiene, school_supplies: school_supplies, status: "U
 async function handleConfirmationEmail() {
       
         try {
-          await axios.post("http://localhost:3001/confirmation-email", {
+          await axios.post("http://localhost:8080/confirmation-email", {
             email: emailAddress,
             subject: "We've got it! Your Referral is in Our System",
             text: text,
@@ -142,7 +142,7 @@ async function handleConfirmationEmail() {
       async function handleConfirmationText() {
       
         try {
-          await axios.post("http://localhost:3001/confirmation-text", {
+          await axios.post("http://localhost:8080/confirmation-text", {
             email: phoneAddress,
             subject: "Referral Received, " + referrer_fname + "!",
             text: "Your Referral for" + formStudentInitials + " with The Giving Closet Project has been accepted and will process soon. " 

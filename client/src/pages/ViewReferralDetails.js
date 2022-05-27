@@ -51,7 +51,7 @@ function ViewReferralDetails() {
 //Query Referral based on ID from URL passed through tableContents
   useEffect(()=>{
     console.log(id);
-    axios.get(`http://localhost:3001/referrals/referralinfo/${id}`).then((response) => {
+    axios.get(`http://localhost:8080/referrals/referralinfo/${id}`).then((response) => {
        console.log(response.data);
        setRefData(response.data);
        setSubmitted(response.data.createdAt.slice(0, 10));
@@ -65,7 +65,7 @@ function ViewReferralDetails() {
 const handleReferrerPickedUp = (id) => {
   //e.preventDefault();
   const updateReferral = { status: 'FULFILLED'}
-  axios.put(`http://localhost:3001/referrals/updateReferral/${refData.id}`, updateReferral
+  axios.put(`http://localhost:8080/referrals/updateReferral/${refData.id}`, updateReferral
   ).then(async (response) => {
     if(response.status == 200){
       window.location.reload();

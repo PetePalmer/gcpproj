@@ -195,7 +195,7 @@ function App(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/auth", {
+      .get("http://localhost:8080/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
@@ -273,7 +273,7 @@ const username = localStorage.getItem("username");
   const volunteerAnnID = 1;
   useEffect(() => {
     const getVolunteerAnnouncement = () => {
-      axios.get(`https://gcpfunction.azurewebsites.net/announcements/announcementinfo/${volunteerAnnID}`).then((response) => {  
+      axios.get(`http://localhost:8080/announcements/announcementinfo/${volunteerAnnID}`).then((response) => {  
         setVolunteerAnnouncementDefault(response.data);
       }).catch(error => console.error('Error:' + error));
     };
@@ -288,7 +288,7 @@ const username = localStorage.getItem("username");
   const referrerAnnID = 2;
   useEffect(() => {
     const getReferrerAnnouncement = () => {
-      axios.get(`http://localhost:3001/announcements/announcementinfo/${referrerAnnID}`).then((response) => {  
+      axios.get(`http://localhost:8080/announcements/announcementinfo/${referrerAnnID}`).then((response) => {  
         setReferrerAnnouncementDefault(response.data);
       }).catch(error => console.error('Error:' + error));
     };
@@ -304,7 +304,7 @@ const username = localStorage.getItem("username");
     }, []);
 
 const countAllUnassigned = () => {
-  axios.get(`http://localhost:3001/referrals/unassignedCount`).then((response) => {  
+  axios.get(`http://localhost:8080/referrals/unassignedCount`).then((response) => {  
     setNumUnassigned(response.data);
     })
     .catch(error => console.error('Error:' + error));
@@ -317,7 +317,7 @@ useEffect(() => {
   }, []);
 
 const countAllAwaitingPickup = () => {
-axios.get(`http://localhost:3001/referrals/submittedAwaitingPickup/?referrer=${username}`, {
+axios.get(`http://localhost:8080/referrals/submittedAwaitingPickup/?referrer=${username}`, {
   params: {
     username: username
   }

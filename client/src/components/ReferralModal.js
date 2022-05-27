@@ -77,7 +77,7 @@ async function handleFulfillSend() {
   //setSent(true)
 
   try {
-    await axios.post("http://localhost:3001/fulfilled-email", {
+    await axios.post("http://localhost:8080/fulfilled-email", {
       email: emailAddress,
       subject: "Good News! Your Referral is Ready",
       text: text,
@@ -95,7 +95,7 @@ async function handleFulfillSMSSend() {
   //setSent(true)
 
   try {
-    await axios.post("http://localhost:3001/fulfilled-text", {
+    await axios.post("http://localhost:8080/fulfilled-text", {
       email: phoneAddress,
       subject: "Good News, " + referral_info.referrer_fname + "!",
       text: "Referral #" + referral_info.id + " with The Giving Closet Project has been completed and is now ready for pickup. " 
@@ -114,7 +114,7 @@ async function handleFulfillSMSSend() {
     function handlePending(e) {
       //e.preventDefault();
       const updateReferral = { status: 'AWAITING PICKUP', status_note: status_note, }
-      axios.put(`http://localhost:3001/referrals/updateReferral/${referral_info.id}`, updateReferral
+      axios.put(`http://localhost:8080/referrals/updateReferral/${referral_info.id}`, updateReferral
       ).then(async (response) => {
         if(response.status = 200){
           window.location.reload();
@@ -128,7 +128,7 @@ async function handleFulfillSMSSend() {
     function handleHold(e) {
       //e.preventDefault();
       const updateReferral = { status: 'ON HOLD', status_note: status_note, }
-      axios.put(`http://localhost:3001/referrals/updateReferral/${referral_info.id}`, updateReferral
+      axios.put(`http://localhost:8080/referrals/updateReferral/${referral_info.id}`, updateReferral
       ).then(async (response) => {
         if(response.status = 200){
           window.location.reload();
@@ -142,7 +142,7 @@ async function handleFulfillSMSSend() {
     function handleRemoveHold(e) {
       //e.preventDefault();
       const updateReferral = { status: 'IN PROGRESS', status_note: status_note, }
-      axios.put(`http://localhost:3001/referrals/updateReferral/${referral_info.id}`, updateReferral
+      axios.put(`http://localhost:8080/referrals/updateReferral/${referral_info.id}`, updateReferral
       ).then(async (response) => {
         if(response.status = 200){
           window.location.reload();
@@ -156,7 +156,7 @@ async function handleFulfillSMSSend() {
     function handleUnassign(e) {
       //e.preventDefault();
       const updateReferral = { status: 'UNASSIGNED', status_note: status_note, volunteer: '', volunteer_user: '' }
-      axios.put(`http://localhost:3001/referrals/updateReferral/${referral_info.id}`, updateReferral
+      axios.put(`http://localhost:8080/referrals/updateReferral/${referral_info.id}`, updateReferral
       ).then(async (response) => {
         if(response.status = 200){
           window.location.reload();
@@ -170,7 +170,7 @@ console.log(referral_info.referrer_notification)
     function handleFulfill(e) {
       //e.preventDefault();
       const updateReferral = { status: 'FULFILLED', status_note: status_note, }
-      axios.put(`http://localhost:3001/referrals/updateReferral/${referral_info.id}`, updateReferral
+      axios.put(`http://localhost:8080/referrals/updateReferral/${referral_info.id}`, updateReferral
       ).then(async (response) => {
         window.location.reload();
         window.scrollTo(0, 0)

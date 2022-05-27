@@ -7,8 +7,7 @@ var bodyParser = require('body-parser');
 const { sequelize } = require("sequelize");
 var jsonParser = bodyParser.json();
 
-
-router.get("/announcementinfo/:volunteerAnnID", async (req, res) => {
+router.get("/announcementinfo/:volunteerAnnID", cors(), async (req, res) => {
     const volunteerAnnID = req.params.volunteerAnnID;
     Announcement.findOne({ attributes: ['announcement'], where: { id: volunteerAnnID } }).then(Announcement=>{
       res.json(Announcement);

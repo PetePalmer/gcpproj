@@ -7,7 +7,7 @@ const ConfirmPickup = ({refID}) => {
   
   const confirmPickup = () => {
     const updateReferral = { status: 'FULFILLED' }
-      axios.put(`http://localhost:3001/referrals/updateReferral/${refID}`, updateReferral
+      axios.put(`http://localhost:8080/referrals/updateReferral/${refID}`, updateReferral
       ).then(async (response) => {
         window.location.reload();
       window.scrollTo(0, 0)

@@ -27,7 +27,7 @@ function UpdateInfo()  {
       Phonenumber: Phone, 
       Notification: Note, 
       Relationship: Relate, }
-    axios.put(`http://localhost:3001/auth/updateUser`, updatedUserInfo, {
+    axios.put(`http://localhost:8080/auth/updateUser`, updatedUserInfo, {
       headers: {
         accessToken: localStorage.getItem("accessToken"),
       },
@@ -64,7 +64,7 @@ function UpdateInfo()  {
 
   
     const changePassword = () => {
-      axios.put("http://localhost:3001/auth/updateInfo",
+      axios.put("http://localhost:8080/auth/updateInfo",
           {
             oldPassword: oldPassword,
             newPassword: newPassword,

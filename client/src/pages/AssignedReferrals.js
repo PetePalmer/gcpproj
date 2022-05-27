@@ -142,7 +142,7 @@ export default function AssignedReferrals(){
         }, []);
 
     const countAllOnHold = () => {
-      axios.get(`http://localhost:3001/referrals/assignedOnHoldCount/?volunteer_user=${volunteer_user}`, {
+      axios.get(`http://localhost:8080/referrals/assignedOnHoldCount/?volunteer_user=${volunteer_user}`, {
         params: {
           username: volunteer_user
         }
@@ -159,7 +159,7 @@ export default function AssignedReferrals(){
           }, []);
   
       const countAllInProgress = () => {
-        axios.get(`http://localhost:3001/referrals/assignedInProgressCount/?volunteer_user=${volunteer_user}`, {
+        axios.get(`http://localhost:8080/referrals/assignedInProgressCount/?volunteer_user=${volunteer_user}`, {
           params: {
             username: volunteer_user
           }
@@ -176,7 +176,7 @@ export default function AssignedReferrals(){
             }, []);
     
         const countAllAwaitingPickup = () => {
-          axios.get(`http://localhost:3001/referrals/assignedAwaitingPickupCount/?volunteer_user=${volunteer_user}`, {
+          axios.get(`http://localhost:8080/referrals/assignedAwaitingPickupCount/?volunteer_user=${volunteer_user}`, {
             params: {
               username: volunteer_user
             }
@@ -193,7 +193,7 @@ export default function AssignedReferrals(){
         }, []);
 
     const getAllReferrals = () => {
-      axios.get(`http://localhost:3001/referrals/assigned/?volunteer_user=${volunteer_user}`, {
+      axios.get(`http://localhost:8080/referrals/assigned/?volunteer_user=${volunteer_user}`, {
         params: {
           username: volunteer_user
         }
@@ -233,10 +233,10 @@ const [search, setSearch] = React.useState('');
     
     let url=""
     if(value){
-      url=`http://localhost:3001/referrals/assigned/search/${volunteer_user}/${value}`
+      url=`http://localhost:8080/referrals/assigned/search/${volunteer_user}/${value}`
     }
     else{
-      url=`http://localhost:3001/referrals/assigned/?volunteer_user=${volunteer_user}`
+      url=`http://localhost:8080/referrals/assigned/?volunteer_user=${volunteer_user}`
     }
     console.log(url);
     axios.get(url).then((response) => {  

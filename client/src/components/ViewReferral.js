@@ -49,12 +49,12 @@ const ViewReferral = (refID, referrer_fname, referrer_lname,
   };
 
   const createAndDownloadPdf = () => {
-    axios.post('http://localhost:3001/create-pdf', refID, referrer_fname, referrer_lname, 
+    axios.post('http://localhost:8080/create-pdf', refID, referrer_fname, referrer_lname, 
     status, outfit_combo, bottom_color, top_colors, pant_size, 
     top_size, bra_info, underwear, shoe_size, socks, hygiene_kit, 
     hygiene_items, feminine_hygiene, school_supplies, student_initials, 
     student_agency, referrer_email, referrer_phone, relation, updatedAt, pdflogo)
-      .then(() => axios.get('http://localhost:3001/fetch-pdf', { responseType: 'blob' }))
+      .then(() => axios.get('http://localhost:8080/fetch-pdf', { responseType: 'blob' }))
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
